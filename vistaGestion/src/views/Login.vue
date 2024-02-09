@@ -1,12 +1,11 @@
 <template>
-  <div class="container">
-    <Navbar/>
-  </div>
-  <div class="container">
+
+
+  <div class="container" style="margin-top: 100px;">
     <div class="heading">Inicio de Sesion</div>
-    <form action="" class="form">
-      <input required="" class="input" type="email" name="email" id="email" placeholder="Correo Electronico">
-      <input required="" class="input" type="password" name="password" id="password" placeholder="Contraseña">
+    <form class="form" @submit.prevent="iniciarSesion" >
+      <input class="input" type="email" name="email" placeholder="Correo Electronico" v-model="email">
+      <input class="input" type="password" name="password" placeholder="Contraseña" v-model="contraseña">
       <span class="forgot-password"><a href="#">Ha olvidado su contraseña?</a></span>
       <input class="login-button" type="submit" value="Iniciar Sesion">
 
@@ -40,16 +39,24 @@
   </div>
 </template>
 
+<script>
 
+export default {
+  name: 'Login',
+  data(){
+    return {
+      email: '',
+      contraseña: ''
+    }
+  },
 
+  methods:{
+    async iniciarSesion(){
 
-
-<script setup>
-
-import Navbar from '../components/Navbar.vue'
-
+    }
+  }
+}
 </script>
-
 
 <style>
 .container {
